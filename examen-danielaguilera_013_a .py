@@ -87,6 +87,12 @@ def validar_stock(stock_num):
 # FUNCIONES DEL PROGRAMA
 #=======================
 
+def buscar_codigo(codigo, dicc_juegos):
+    """ esta funsion es para que actualizar_precio pueda revisar si el codgo del juego exite o no """
+    if codigo in dicc_juegos:
+        return True
+    return False
+        
 def obtener_plataformas_actuales(dicc_juegos):
     """ creo una lista vasia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
     lista_plataformas = []
@@ -144,5 +150,12 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
                 nuevo_precio = int(input("Ingrese el nuevo precio para el juego; "))
                 if validar_precio(nuevo_precio): # ahora con la posision 0 es el precio a cambiar de una 
                     dicc_inventario[cod][0] = nuevo_precio
+                    print("Precio actualizado correctamente para el juego" + dicc_juegos[cod][0])
+                else:
+                    print("Precio invalido. Tiene que ser mayor a 0.")
+            except:
+                print("Erroe: El precio debe ser un número entero.")
+        else:
+            print("El codigo de juego no existe en el sistema o esta mal escrito ") 
 
-
+        continuar = input("¿Desea actualizar otro precio? (si/no); ")
