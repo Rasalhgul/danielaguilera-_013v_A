@@ -89,4 +89,15 @@ def validar_stock(stock_num):
 
 def obtener_plataformas_actuales(dicc_juegos):
     """ creo una lista vasia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
+    lista_plataformas = []
+    for cod, datos in dicc_juegos.items():
+        plat_juego = datos[1] # tengo la plataforma en la posicion 1 
+
+        if plat_juego not in lista_plataformas:
+            lista_plataformas.append(plat_juego)
+            
+    return lista_plataformas
+
+def leer_opcion():
+    """ aqui tengo que usar vien el try porque si el usuario es medio pavo y mete una letra con el int se cae y rompe mi programa completo por eso tengo qeu usar un execpt """
     
