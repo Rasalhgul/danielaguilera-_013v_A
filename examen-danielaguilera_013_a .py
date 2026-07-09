@@ -125,4 +125,11 @@ def stock_plataforma(dicc_juego, dicc_inventario):
             # tiene que guardar el stock en el otro diccionario en la posison 1
             cantidad = dicc_inventario[cod][1]
             total_stock = total_stock + cantidad
-                  
+
+    if encontrado: 
+        print("=======================================")
+        print("El stock total para " + plat + " es:" + str(total_stock) + "unidades.")
+        print("======================================")
+    else:
+        print("No hay juegos registrado para esta plataforma" + plat)
+        
