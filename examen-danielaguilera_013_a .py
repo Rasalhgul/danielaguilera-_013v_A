@@ -202,8 +202,20 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     if not validar_multijugador(multi_str):
         print("Error: Responda si o no. ")
         return
-    
-        
+
+    des = input("Desarrolladora / Estudio: ")
+    if not validar_desarrolladora(des):
+        print("Error: la desarrolladora no puede estar vacia.")
+        return
+
+    try:
+        prec = int(input("Precio del juego: "))
+        if not validar_precio(prec):
+            print("Error: El precio debe ser mayor a 0. ")
+            return
+     
+                
+
 
 
 
