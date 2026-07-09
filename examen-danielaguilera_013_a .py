@@ -190,4 +190,14 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     
     cat = input("categoria/genreo: ")
     if not validar_categoria(cat):
+        print("Error: Ctegoria no es valida. ")
+        return
+
+    clas = input("Clasificacion (E, T, M, E10+): ")
+    if not validar_clasificacion(clas):
+        print("Error: Clasificacion no es valida")
+        return
+    
+        
+
 
