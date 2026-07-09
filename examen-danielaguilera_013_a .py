@@ -52,6 +52,12 @@ def validar_plataforma(plataforma):
         return True
     return False
 
+def validar_categoria(categoria):
+    """ tengo que ver la categria tenga texto de lo mismo cual sea pero que no ese vaica porque sino queda en el diccionaro"""
+    if len(categoria.strip()) > 0:
+        return True    
+    return False
+
 def validar_clasificacion(clasidicacion):
     """"tengo que recordar a usar la clasificacion de escribir el E,T,M y si pongo cualquier otra cuestion va a fallarr""" 
     clasidicaciones_validas = ["E", "T", "M", "E10+"]
@@ -165,7 +171,23 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     print("\n--- REGISTRAR NUEVO JUEGO ---")
     cod = input("codigo (ej: G007):")
     if buscar_codigo(cod, dicc_juegos):
-        print("Error: este cofigo ya existe.")
+        print("Error: este codigo ya existe.")
         return
-    nom = input("Error: El nombre no puede estar vacio. ")
-        
+    
+    if not validar_codigo(cod):
+        print("Error: Codigo con formato incorrecto.")
+        return
+
+    nom = input("Nombre del videjuego: ")
+    if not validar_nombre(nom):
+        print("Error: El nombre no puede estar vacio.")
+        return
+
+    plat = input("plataforma (PC, Switch, PS5, Xbox): ")
+    if not validar_plataforma(plat):
+        print("Error: La plataforma no es valida")    
+        return
+    
+    cat = input("categoria/genreo: ")
+    if not validar_categoria(cat):
+
