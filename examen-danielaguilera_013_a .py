@@ -164,8 +164,23 @@ def busqueda_precio(dicc_juegos, dicc_inventario):
         precio = datos_inv[0]
         stock = datos_inv[1]
 
-    # tengo que agreagar     
+    # tengo que validar si esta en el precio y queda en stock 
 
+    if precio >= minimo and precio <= maximo and stock > 0:
+        datos_juego = dicc_juegos[cod]
+        nombre_juego = datos_juego[0]
+        lista_nombres.append(nombre_juego)
+
+    # hare que se vea mas ordenado aplicando un orden alfavetico     
+    lista_nombres.sort()
+
+    if len(lista_nombres) >0:
+        print("\n--- JUEGOS ENCONTRADOS DISPONIBLES ---")
+        for nom in lista_nombres:
+            print("- "+ nom)
+        print("----------------------------------------")
+    else:
+        print("No se a encontrado juegos con stock en ese rango de precios. ")
 
 def actualizar_precio(dicc_juegos, dicc_inventario):
     """ tiene que buscar el codigo para poder cambiar el precio  y tengo que usar un while por si quiere seguir cambiado mas precios de una """
