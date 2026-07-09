@@ -213,8 +213,26 @@ def agregar_juego(dicc_juegos, dicc_inentario):
         if not validar_precio(prec):
             print("Error: El precio debe ser mayor a 0. ")
             return
-     
-                
+
+    except:
+        print("Error: El precio debe ser un numero entero: ")
+        return
+
+    try:
+        stk = int(input("Stock inicial: "))
+        if not validar_stock(stk):
+            print("Error: El stock no puede sr negativo.") 
+            return
+    except:
+        print("Error: el stock debe ser un numero entero: ")
+        return
+
+    # si llegue aqui todod deveria de fucnionar si no mi SI/NO o mi True/False estan mal o esscribi algo mal 
+
+    if multi_str.lower() == "si":
+        multi_bool = True
+    else:
+        multi_bool = False                                
 
 
 
