@@ -132,4 +132,10 @@ def stock_plataforma(dicc_juego, dicc_inventario):
         print("======================================")
     else:
         print("No hay juegos registrado para esta plataforma" + plat)
-        
+    
+def actualizar_precio(dicc_juegos, dicc_inventario):
+    """ tiene que buscar el codigo para poder cambiar el precio  y tengo que usar un while por si quiere seguir cambiado mas precios de una """
+    continuar = "si"
+    while continuar.lower() == "si":
+        cod = input() 
+
