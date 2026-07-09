@@ -82,4 +82,11 @@ def validar_stock(stock_num):
     if stock_num >= 0:
         return True
     return False
-        
+
+#=======================
+# FUNCIONES DEL PROGRAMA
+#=======================
+
+def obtener_plataformas_actuales(dicc_juegos):
+    """ creo una lista vasia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
+    
