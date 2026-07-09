@@ -197,7 +197,14 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     if not validar_clasificacion(clas):
         print("Error: Clasificacion no es valida")
         return
+
+    multi_str = input("¿es Multijufgador? (si/no). ")
+    if not validar_multijugador(multi_str):
+        print("Error: Responda si o no. ")
+        return
     
         
+
+
 
 
