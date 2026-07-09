@@ -109,4 +109,12 @@ def leer_opcion():
 
 def stock_plataforma(dicc_juego, dicc_inventario):
     """ aqui tengo que pedirle al la consola que recorra los juegos y ir sumando el stock de las copias y mostrar el total al final """
-     
+    plat = input("ingrese la ptataforma (pc, Switch, PS5, Xbox): ")
+    if not validar_plataforma(plat):
+        print("Esa plataforma no es válida.")
+        return
+
+    total_stock = 0
+    encontrado = False
+    
+        
