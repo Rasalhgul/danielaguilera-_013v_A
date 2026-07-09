@@ -119,7 +119,7 @@ def stock_plataforma(dicc_juego, dicc_inventario):
 
     # tengo que pillar que juego son de las colsolas elegidas
 
-    for cod, datos in dicc_juego.itmes():
+    for cod, datos in dicc_juego.items():
         if datos[1] == plat:
             encontrado = True
             # tiene que guardar el stock en el otro diccionario en la posison 1
@@ -138,6 +138,7 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
     continuar = "si"
     while continuar.lower() == "si":
         cod = input("Ingrese el codigo del juego a acualizar (ej: GOO1): ")
-        
-         
+
+        if buscar_codigo(cod, dicc_juego):
+
 
