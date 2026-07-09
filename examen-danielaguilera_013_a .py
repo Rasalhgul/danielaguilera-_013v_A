@@ -150,7 +150,7 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
                 nuevo_precio = int(input("Ingrese el nuevo precio para el juego; "))
                 if validar_precio(nuevo_precio): # ahora con la posision 0 es el precio a cambiar de una 
                     dicc_inventario[cod][0] = nuevo_precio
-                    print("Precio actualizado correctamente para el juego" + dicc_juegos[cod][0])
+                    print("Precio actualizado correctamente para el juego: " + dicc_juegos[cod][0])
                 else:
                     print("Precio invalido. Tiene que ser mayor a 0.")
             except:
@@ -162,4 +162,4 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
 
 def agregar_juego(dicc_juego, dicc_inentario):
     """ tengo que hacer que pida todos los datos pero ir validando uno por uno y si una pura cuestion falla chao se frena la ejecusion y no deberia de guardar nada"""
-    
+    print("\n--- REGISTRAR NUEVO JUEGO ---")
