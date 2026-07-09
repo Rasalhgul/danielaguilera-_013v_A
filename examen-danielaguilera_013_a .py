@@ -139,8 +139,10 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
     while continuar.lower() == "si":
         cod = input("Ingrese el codigo del juego a acualizar (ej: GOO1): ")
 
-        if buscar_codigo(cod, dicc_juego):
+        if buscar_codigo(cod, dicc_juegos):
             try:
-                nuevo_precio
+                nuevo_precio = int(input("Ingrese el nuevo precio para el juego; "))
+                if validar_precio(nuevo_precio): # ahora con la posision 0 es el precio a cambiar de una 
+                    dicc_inventario[cod][0] = nuevo_precio
 
 
