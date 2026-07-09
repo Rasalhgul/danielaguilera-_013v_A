@@ -257,8 +257,25 @@ def eliminar_juego(dicc_juegos, dicc_inventario):
 #   MENU DE LA TIENDA
 #=========================        
 """ LOGRE crear los dos diccionarios relacionandos y tengo qeu implementar el uso del while ordenado para inpmlementar con el for para tomar una condicion de ejecucion """
+# tengo que llamar a la funcion nueva antes de empezar el menu para que carge la lista 
+plataformas_en_tienda = obtener_plataformas_actuales(juegos)
 
+ejecutando = True
 
+while ejecutando
+    # menu para la tienda y los juegos 
 
+    print("\n ==== MENU PRINCIPAL====")
+    print("1. Stock por plataforma")
+    print("2. busqueda de juegos por rango de precio")
+    print("3. atualiar precio de juego")
+    print("4. Agregar juego")
+    print("5. Eliminar juego")
+    print("6 salir")
 
+    opc = leer_opcion()
 
+    # tengo que hacer las funciones para que me derive cada una segun el nu,ero que ponga 
+    if opc == 1:
+        stock_plataforma(juegos, inventario)
+        
