@@ -67,13 +67,13 @@ def validar_clasificacion(clasidicacion):
 
 def validar_multijugador(multi_str):
     """ tengo que hacer aqui que el usuario diga si o no despues los paso a booleano si escrib otra cosa tenque mandar error altiro o queda mal """
-    if multi_str.lower == "si" or multi_str.lower() == "no":
+    if multi_str.lower() == "si" or multi_str.lower() == "no":
         return True
     return False
 
 def validar_desarrolladora(desarrolladora):
     """ tengo que hacer que ponga el estudio qeu programo el juego y no dejar vacio esto tampoco """
-    if len(desarrolladora.trip()) > 0:
+    if len(desarrolladora.strip()) > 0:
         return True
     return False
 
@@ -160,16 +160,16 @@ def busqueda_precio(dicc_juegos, dicc_inventario):
     # tengo que hacer la lista par meter los nombres u poder ordenar facil 
     lista_nombres = []
 
-    for cod, datos_inv in dicc_inventario.item():
+    for cod, datos_inv in dicc_inventario.items():
         precio = datos_inv[0]
         stock = datos_inv[1]
 
     # tengo que validar si esta en el precio y queda en stock 
 
-    if precio >= minimo and precio <= maximo and stock > 0:
-        datos_juego = dicc_juegos[cod]
-        nombre_juego = datos_juego[0]
-        lista_nombres.append(nombre_juego)
+        if precio >= minimo and precio <= maximo and stock > 0:
+         datos_juego = dicc_juegos[cod]
+         nombre_juego = datos_juego[0]
+         lista_nombres.append(nombre_juego)
 
     # hare que se vea mas ordenado aplicando un orden alfavetico     
     lista_nombres.sort()
@@ -203,80 +203,84 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
 
         continuar = input("¿Desea actualizar otro precio? (si/no); ")
 
-def agregar_juego(dicc_juegos, dicc_inentario):
+def agregar_juego(dicc_juegos, dicc_inventario):
     """ tengo que hacer que pida todos los datos pero ir validando uno por uno y si una pura cuestion falla chao se frena la ejecusion y no deberia de guardar nada"""
     print("\n--- REGISTRAR NUEVO JUEGO ---")
-    cod = input("codigo (ej: G007):")
-    if buscar_codigo(cod, dicc_juegos):
+
+    while True:
+    
+     cod = input("codigo (ej: G007):")
+     if buscar_codigo(cod, dicc_juegos):
         print("Error: este codigo ya existe.")
         return
     
-    if not validar_codigo(cod):
-        print("Error: Codigo con formato incorrecto.")
-        return
+     if not validar_codigo(cod):
+         print("Error: Codigo con formato incorrecto.")
+         return
 
-    nom = input("Nombre del videjuego: ")
-    if not validar_nombre(nom):
-        print("Error: El nombre no puede estar vacio.")
-        return
+     nom = input("Nombre del videjuego: ")
+     if not validar_nombre(nom):
+         print("Error: El nombre no puede estar vacio.")
+         return
 
-    plat = input("plataforma (PC, Switch, PS5, Xbox): ")
-    if not validar_plataforma(plat):
-        print("Error: La plataforma no es valida")    
-        return
+     plat = input("plataforma (PC, Switch, PS5, Xbox): ")
+     if not validar_plataforma(plat):
+         print("Error: La plataforma no es valida")    
+         return
     
-    cat = input("categoria/genreo: ")
-    if not validar_categoria(cat):
-        print("Error: Ctegoria no es valida. ")
-        return
+     cat = input("categoria/genreo: ")
+     if not validar_categoria(cat):
+         print("Error: Ctegoria no es valida. ")
+         return
 
-    clas = input("Clasificacion (E, T, M, E10+): ")
-    if not validar_clasificacion(clas):
-        print("Error: Clasificacion no es valida")
-        return
+     clas = input("Clasificacion (E, T, M, E10+): ")
+     if not validar_clasificacion(clas):
+         print("Error: Clasificacion no es valida")
+         return
 
-    multi_str = input("¿es Multijufgador? (si/no). ")
-    if not validar_multijugador(multi_str):
-        print("Error: Responda si o no. ")
-        return
+     multi_str = input("¿es Multijufgador? (si/no). ")
+     if not validar_multijugador(multi_str):
+         print("Error: Responda si o no. ")
+         return
 
-    des = input("Desarrolladora / Estudio: ")
-    if not validar_desarrolladora(des):
-        print("Error: la desarrolladora no puede estar vacia.")
-        return
+     des = input("Desarrolladora / Estudio: ")
+     if not validar_desarrolladora(des):
+         print("Error: la desarrolladora no puede estar vacia.")
+         return
 
-    try:
-        prec = int(input("Precio del juego: "))
-        if not validar_precio(prec):
-            print("Error: El precio debe ser mayor a 0. ")
-            return
+     try:
+         prec = int(input("Precio del juego: "))
+         if not validar_precio(prec):
+              print("Error: El precio debe ser mayor a 0. ")
+              return
 
-    except:
-        print("Error: El precio debe ser un numero entero: ")
-        return
+     except:
+         print("Error: El precio debe ser un numero entero: ")
+         return
 
-    try:
-        stk = int(input("Stock inicial: "))
-        if not validar_stock(stk):
+     try:
+         stk = int(input("Stock inicial: "))
+         if not validar_stock(stk):
             print("Error: El stock no puede sr negativo.") 
             return
-    except:
-        print("Error: el stock debe ser un numero entero: ")
-        return
+     except:
+         print("Error: el stock debe ser un numero entero: ")
+         return
 
-    # si llegue aqui todod deveria de fucnionar si no mi SI/NO o mi True/False estan mal o esscribi algo mal 
+     # si llegue aqui todod deveria de fucnionar si no mi SI/NO o mi True/False estan mal o esscribi algo mal 
 
-    if multi_str.lower() == "si":
+     if multi_str.lower() == "si":
         multi_bool = True
-    else:
+     else:
         multi_bool = False  
 
-    # tengo qeu hacer que los datos esten ordenaditos a los dos diccionarios usando la misma clave
+     # tengo qeu hacer que los datos esten ordenaditos a los dos diccionarios usando la misma clave
 
-    dicc_juegos[cod] = [nom, plat, cat.lower(), clas,multi_bool, des]
-    dicc_inentario[cod] = [prec, stk]
-    
-    print("¡juego guardado con exito en el sistema!")
+     dicc_juegos[cod] = [nom, plat, cat.lower(), clas,multi_bool, des]
+     dicc_inventario[cod] = [prec, stk]
+     
+     print("¡juego guardado con exito en el sistema!")
+     break
 
 def eliminar_juego(dicc_juegos, dicc_inventario):
     """ tengo que sacar el juego del mapa asi que lo tengoque lograr borrarlo de los dos dicicionaros al mismo tiempo usando pop para qeu no queden datos guachos por hai """ 
@@ -318,5 +322,17 @@ while ejecutando:
     elif opc == 2:
         busqueda_precio(juegos, inventario)
     elif opc == 3:
-        actualizar     
-        
+        actualizar_precio(juegos, inventario)
+    elif opc == 4:
+        agregar_juego(juegos, inventario)
+        # quiero qeu al agragar un juego poder voler a acaualizar la lista por si ingreso una nueva consola     
+        plataformas_en_tienda = obtener_plataformas_actuales(juegos)
+    elif opc == 5:
+        eliminar_juego(juegos, inventario)
+        # si borro un juego tiene que actualzar la lista tambin si se borro el unico que quedaba 
+        plataformas_en_tienda = obtener_plataformas_actuales(juegos)
+    elif opc == 6:
+        print("Saliendo del programa... ¡chao!")
+        ejecutando = False
+    else:
+        print("Opcion invalida, intenta con un numero del 1 al 6 ")
