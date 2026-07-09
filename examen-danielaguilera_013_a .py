@@ -92,7 +92,7 @@ def buscar_codigo(codigo, dicc_juegos):
     if codigo in dicc_juegos:
         return True
     return False
-        
+
 def obtener_plataformas_actuales(dicc_juegos):
     """ creo una lista vasia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
     lista_plataformas = []
@@ -159,3 +159,7 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
             print("El codigo de juego no existe en el sistema o esta mal escrito ") 
 
         continuar = input("¿Desea actualizar otro precio? (si/no); ")
+
+def agregar_juego(dicc_juego, dicc_inentario):
+    """ tengo que hacer que pida todos los datos pero ir validando uno por uno y si una pura cuestion falla chao se frena la ejecusion y no deberia de guardar nada"""
+    
