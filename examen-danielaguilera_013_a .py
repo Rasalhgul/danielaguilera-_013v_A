@@ -160,6 +160,12 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
 
         continuar = input("¿Desea actualizar otro precio? (si/no); ")
 
-def agregar_juego(dicc_juego, dicc_inentario):
+def agregar_juego(dicc_juegos, dicc_inentario):
     """ tengo que hacer que pida todos los datos pero ir validando uno por uno y si una pura cuestion falla chao se frena la ejecusion y no deberia de guardar nada"""
     print("\n--- REGISTRAR NUEVO JUEGO ---")
+    cod = input("codigo (ej: G007):")
+    if buscar_codigo(cod, dicc_juegos):
+        print("Error: este cofigo ya existe.")
+        return
+    nom = input("Error: El nombre no puede estar vacio. ")
+        
