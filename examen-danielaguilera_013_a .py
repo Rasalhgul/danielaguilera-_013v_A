@@ -124,7 +124,7 @@ def stock_plataforma(dicc_juego, dicc_inventario):
             encontrado = True
             # tiene que guardar el stock en el otro diccionario en la posison 1
             cantidad = dicc_inventario[cod][1]
-            total_stock = total_stock + cantidad
+            total_stock += cantidad
 
     if encontrado: 
         print("=======================================")
@@ -140,5 +140,7 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
         cod = input("Ingrese el codigo del juego a acualizar (ej: GOO1): ")
 
         if buscar_codigo(cod, dicc_juego):
+            try:
+                nuevo_precio
 
 
