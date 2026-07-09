@@ -46,7 +46,7 @@ def validar_nombre(nombre):
     return False
 
 def validar_plataforma(plataforma):
-    """si no escribo tal cual algunas de estas consolas porque si pongo ' plya5' y no 'PS5' fallla la busqueda despues""""
+    """si no escribo tal cual algunas de estas consolas porque si pongo ' plya5' y no 'PS5' fallla la busqueda despues"""
     plataforma_validar = ["pc", "Switch", "PS5", "Xbox"]
     if plataforma in plataforma_validar:
         return True
@@ -68,6 +68,18 @@ def validar_multijugador(multi_str):
 def validar_desarrolladora(desarrolladora):
     """ tengo que hacer que ponga el estudio qeu programo el juego y no dejar vacio esto tampoco """
     if len(desarrolladora.trip()) > 0:
+        return True
+    return False
+
+def validar_precio(precio_num):
+    """ el precio no puede ser gratis ni meos que sero o si no la tienda pierde plata asi qeu tengo que hacer una restriccion mayora cero sino me despiden jaja"""
+    if precio_num > 0:
+        return True
+    return False    
+
+def validar_stock(stock_num):
+    """ tengo que hacer el stock es cero por si queda no quedan en stock """
+    if stock_num >= 0:
         return True
     return False
         
