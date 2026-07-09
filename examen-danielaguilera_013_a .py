@@ -51,5 +51,23 @@ def validar_plataforma(plataforma):
     if plataforma in plataforma_validar:
         return True
     return False
-    
-            
+
+def validar_clasificacion(clasidicacion):
+    """"tengo que recordar a usar la clasificacion de escribir el E,T,M y si pongo cualquier otra cuestion va a fallarr""" 
+    clasidicaciones_validas = ["E", "T", "M", "E10+"]
+    if clasidicacion in clasidicaciones_validas:
+        return True
+    return False    
+
+def validar_multijugador(multi_str):
+    """ tengo que hacer aqui que el usuario diga si o no despues los paso a booleano si escrib otra cosa tenque mandar error altiro o queda mal """
+    if multi_str.lower == "si" or multi_str.lower() == "no":
+        return True
+    return False
+
+def validar_desarrolladora(desarrolladora):
+    """ tengo que hacer que ponga el estudio qeu programo el juego y no dejar vacio esto tampoco """
+    if len(desarrolladora.trip()) > 0:
+        return True
+    return False
+        
