@@ -137,5 +137,7 @@ def actualizar_precio(dicc_juegos, dicc_inventario):
     """ tiene que buscar el codigo para poder cambiar el precio  y tengo que usar un while por si quiere seguir cambiado mas precios de una """
     continuar = "si"
     while continuar.lower() == "si":
-        cod = input() 
+        cod = input("Ingrese el codigo del juego a acualizar (ej: GOO1): ")
+        
+         
 
