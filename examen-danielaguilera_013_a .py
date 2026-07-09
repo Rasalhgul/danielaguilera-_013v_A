@@ -41,4 +41,15 @@ def validar_codigo(codigo):
 
 def validar_nombre(nombre):
     """ aqui el usuario me deja el nombre vacio se rompe la lista asi que strip para borrar espacios y ver que tenga algoe escrito """
-                        
+    if len(nombre.strip()) > 0:
+        return True                    
+    return False
+
+def validar_plataforma(plataforma):
+    """si no escribo tal cual algunas de estas consolas porque si pongo ' plya5' y no 'PS5' fallla la busqueda despues""""
+    plataforma_validar = ["pc", "Switch", "PS5", "Xbox"]
+    if plataforma in plataforma_validar:
+        return True
+    return False
+    
+            
