@@ -116,5 +116,13 @@ def stock_plataforma(dicc_juego, dicc_inventario):
 
     total_stock = 0
     encontrado = False
-    
-        
+
+    # tengo que pillar que juego son de las colsolas elegidas
+
+    for cod, datos in dicc_juego.itmes():
+        if datos[1] == plat:
+            encontrado = True
+            # tiene que guardar el stock en el otro diccionario en la posison 1
+            cantidad = dicc_inventario[cod][1]
+            total_stock = total_stock + cantidad
+                  
