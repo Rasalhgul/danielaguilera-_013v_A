@@ -239,7 +239,11 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     dicc_juegos[cod] = [nom, plat, cat.lower(), clas,multi_bool, des]
     dicc_inentario[cod] = [prec, stk]
     
-     
+    print("¡juego guardado con exito en el sistema!")
+
+def eliminar_juego(dicc_juegos, dicc_inventario):
+    """ tengo que sacar el juego del mapa asi que lo tengoque lograr borrarlo de los dos dicicionaros al mismo tiempo usando pop para qeu no queden datos guachos por hai """ 
+       
 
 
 
