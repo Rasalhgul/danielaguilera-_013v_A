@@ -237,8 +237,9 @@ def agregar_juego(dicc_juegos, dicc_inentario):
     # tengo qeu hacer que los datos esten ordenaditos a los dos diccionarios usando la misma clave
 
     dicc_juegos[cod] = [nom, plat, cat.lower(), clas,multi_bool, des]
-                                      
-
+    dicc_inentario[cod] = [prec, stk]
+    
+     
 
 
 
