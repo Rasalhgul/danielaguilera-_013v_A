@@ -99,11 +99,14 @@ def obtener_plataformas_actuales(dicc_juegos):
     return lista_plataformas
 
 def leer_opcion():
-    """ aqui tengo que usar vien el try porque si el usuario es medio pavo y mete una letra con el int se cae y rompe mi programa completo por eso tengo qeu usar un execpt """
+    """ aqui tengo que usar bien el try porque si el usuario es medio pavo y mete una letra con el int se cae y rompe mi programa completo por eso tengo qeu usar un execpt """
     try:
         opcion = int(input("seleccione una opcion (1-6): "))
         return opcion
     except:
         print("Error: Tienes que ingresar un número entero.")
         return 0
-            
+
+def stock_plataforma(dicc_juego, dicc_inventario):
+    """ aqui tengo que pedirle al la consola que recorra los juegos y ir sumando el stock de las copias y mostrar el total al final """
+     
