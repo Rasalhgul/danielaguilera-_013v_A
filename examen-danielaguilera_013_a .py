@@ -1,5 +1,5 @@
 #=====================
-# DICCINORIO PRINCIPAL
+# DICCIONARIO PRINCIPAL
 #=====================
 """aqui pongo el dicionario y su categoria donde queda la infomacion del producto y su codigo""" 
 
@@ -94,13 +94,13 @@ def validar_stock(stock_num):
 #=======================
 
 def buscar_codigo(codigo, dicc_juegos):
-    """ esta funsion es para que actualizar_precio pueda revisar si el codgo del juego exite o no """
+    """ esta funcion es para que actualizar_precio pueda revisar si el codgo del juego exite o no """
     if codigo in dicc_juegos:
         return True
     return False
 
 def obtener_plataformas_actuales(dicc_juegos):
-    """ creo una lista vasia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
+    """ creo una lista vacia que recorre el diccionario con un For saco la ptaforma de cada juego y tengo que usar el append para guardarla y le mmeto un if oara que no serepitan las consolas en la llista"""
     lista_plataformas = []
     for cod, datos in dicc_juegos.items():
         plat_juego = datos[1] # tengo la plataforma en la posicion 1 
@@ -140,7 +140,7 @@ def stock_plataforma(dicc_juego, dicc_inventario):
 
     if encontrado: 
         print("=======================================")
-        print("El stock total para " + plat + " es:" + str(total_stock) + "unidades.")
+        print("El stock total para" + plat + "es: "+ str(total_stock) + "unidades.")
         print("======================================")
     else:
         print("No hay juegos registrado para esta plataforma" + plat)
