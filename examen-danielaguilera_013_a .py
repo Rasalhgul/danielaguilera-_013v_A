@@ -100,4 +100,10 @@ def obtener_plataformas_actuales(dicc_juegos):
 
 def leer_opcion():
     """ aqui tengo que usar vien el try porque si el usuario es medio pavo y mete una letra con el int se cae y rompe mi programa completo por eso tengo qeu usar un execpt """
-    
+    try:
+        opcion = int(input("seleccione una opcion (1-6): "))
+        return opcion
+    except:
+        print("Error: Tienes que ingresar un número entero.")
+        return 0
+            
