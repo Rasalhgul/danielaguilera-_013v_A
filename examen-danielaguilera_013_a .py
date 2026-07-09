@@ -243,7 +243,21 @@ def agregar_juego(dicc_juegos, dicc_inentario):
 
 def eliminar_juego(dicc_juegos, dicc_inventario):
     """ tengo que sacar el juego del mapa asi que lo tengoque lograr borrarlo de los dos dicicionaros al mismo tiempo usando pop para qeu no queden datos guachos por hai """ 
-       
+
+    cod = input("Ingrese el codigo del juego que desea eliminar: ")
+
+    if buscar_codigo(cod, dicc_juegos):
+        dicc_juegos.pop(cod)
+        dicc_inventario.pop(cod)
+        print("El juego con codigo" + cod + " fue eliminado completamente ")
+    else:
+        print("No se encontro ningun juego con ese codigo. ")
+
+#=========================
+#   MENU DE LA TIENDA
+#=========================        
+""" LOGRE crear los dos diccionarios relacionandos y tengo qeu implementar el uso del while ordenado para inpmlementar con el for para tomar una condicion de ejecucion """
+
 
 
 
