@@ -145,6 +145,28 @@ def stock_plataforma(dicc_juego, dicc_inventario):
     else:
         print("No hay juegos registrado para esta plataforma" + plat)
     
+def busqueda_precio(dicc_juegos, dicc_inventario):
+    """tengo que hacer la busqueda de presio y el que se filtre solo los qeu tengan stock """
+    try:
+        minimo = int(input("ingrese el precio minimo: "))
+        maximo = int(input("ingrese el precio maximo: "))
+    except:
+        print("coloque solo numeros validos para los precios.")
+        return    
+
+    if minimo > maximo:
+        print("El minimo no puede ser mayor que el maximo.")    
+        return
+    # tengo que hacer la lista par meter los nombres u poder ordenar facil 
+    lista_nombres = []
+
+    for cod, datos_inv in dicc_inventario.item():
+        precio = datos_inv[0]
+        stock = datos_inv[1]
+
+    # tengo que agreagar     
+
+
 def actualizar_precio(dicc_juegos, dicc_inventario):
     """ tiene que buscar el codigo para poder cambiar el precio  y tengo que usar un while por si quiere seguir cambiado mas precios de una """
     continuar = "si"
@@ -262,7 +284,7 @@ plataformas_en_tienda = obtener_plataformas_actuales(juegos)
 
 ejecutando = True
 
-while ejecutando
+while ejecutando:
     # menu para la tienda y los juegos 
 
     print("\n ==== MENU PRINCIPAL====")
@@ -278,4 +300,8 @@ while ejecutando
     # tengo que hacer las funciones para que me derive cada una segun el nu,ero que ponga 
     if opc == 1:
         stock_plataforma(juegos, inventario)
+    elif opc == 2:
+        busqueda_precio(juegos, inventario)
+    elif opc == 3:
+        actualizar     
         
