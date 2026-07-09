@@ -40,4 +40,5 @@ def validar_codigo(codigo):
         return False
 
 def validar_nombre(nombre):
-    """ """                    
+    """ aqui el usuario me deja el nombre vacio se rompe la lista asi que strip para borrar espacios y ver que tenga algoe escrito """
+                        
